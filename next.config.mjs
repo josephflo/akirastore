@@ -1,9 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  typescript: {
-    // Ignora los errores de tipo en el build
-    ignoreBuildErrors: true,
-  },
-};
-
-export default nextConfig;
+/**
+ * @type { import("next").NextConfig }
+ */
+module.exports = {
+  reactStrictMode: false
+}
