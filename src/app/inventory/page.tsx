@@ -7,6 +7,7 @@ import PostCard from '@/components/post/PostCard'
 
 import { prisma } from '@/lib/prisma'
 import { RenderList } from 'react-kuh'
+import ProductCard from '@/components/ProductCard'
 
 export const revalidate = 0
 
@@ -36,10 +37,9 @@ export default async function Posts() {
         </div>
       ) : (
         <div className='py-4 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 items-stretch gap-4 rounded-md'>
-          <RenderList
-            data={posts}
-            render={post => <PostCard post={post} key={post.id} />}
-          />
+          {posts.map((posts) => (
+            <ProductCard key={posts.id} post={posts} />
+          ))}
         </div>
       )}
     </section>

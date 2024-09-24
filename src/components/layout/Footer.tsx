@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Footer = () => {
   return (
-    <section className="bg-background w-full h-[320px] border-t border-black dark:border-white">
+    <footer className="bg-background w-full h-[320px] border-t border-black dark:border-white mt-10">
       <div className="flex mx-auto px-28 justify-between md:max-w-[84rem] border-b border-black dark:border-white py-16">
         <div className="flex flex-col md:max-w-[480px] gap-2">
           <h1 className="font-bold leading-normal">ACERCA DE AKIRA STORE</h1>
@@ -34,7 +34,7 @@ const Footer = () => {
         <p className="text-sm font-light">Copyright © Akira Store | Tel:+54 9 11 5110-6369 - Email: akira@store.com.ar</p>
         <p className="text-sm font-light">Design by JosephFloDev</p>
       </div>
-    </section>
+    </footer>
   )
 }
 
