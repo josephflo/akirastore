@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 
 export default function PostsLoading() {
   return (
-    <section>
+    <section className='margin-section-hero'>
       <div className='flex gap-1 items-center '>
         <ArrowLeft size={18} />
         Back

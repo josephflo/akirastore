@@ -4,7 +4,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 
 export default function PostIdLoading() {
   return (
-    <section>
+    <section className='margin-section-hero'>
       <div className='flex gap-1 items-center '>
         <ArrowLeft size={18} />
         Back

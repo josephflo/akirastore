@@ -5,7 +5,7 @@ import PostForm from '@/components/post/PostForm'
 
 export default function Create() {
   return (
-    <section>
+    <section className='margin-section-hero'>
       <Link href='/inventory' className='flex gap-1 items-center max-w-min'>
         <ArrowLeft size={18} />
         Back

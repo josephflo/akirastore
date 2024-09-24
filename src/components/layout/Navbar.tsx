@@ -9,20 +9,20 @@ export default function Navbar() {
   return (
     <header className="border-b border-opacity-10 backdrop-blur-lg bg-opacity-70 sticky top-0 z-50">
       <div className="max-w-screen-2xl mx-auto flex items-center justify-between py-2 px-6 md:px-8">
-        <div className="flex justify-between w-full items-center">
+        <div className="flex justify-between w-full items-center ">
           <Link className="flex font-bold text-lg w-6 h-auto " href={"/"}>
             <IoIosMenu className="text-2xl font-normal  items" />
           </Link>
 
-          <Link className="flex font-bold text-lg w-16 h-auto " href={"/"}>
+          <Link className="flex font-bold text-lg w-16 h-auto tracking-widest" href={"/"}>
             MENU
           </Link>
 
           <Link
-            className="font-bold text-lg w-16 h-auto mx-auto"
+            className="font-bold text-lg w-16 h-auto mx-auto tracking-widest"
             href="/inventory"
           >
-            SEARCH
+            BSCR
           </Link>
         </div>
 

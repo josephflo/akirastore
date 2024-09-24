@@ -6,6 +6,7 @@ import { AuthProvider, Navbar, ThemeProvider } from '@/components/layout'
 
 import { AtomicState } from 'atomic-state'
 import { FetchConfig } from 'http-react'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'AKIRA STORE',
@@ -27,9 +28,10 @@ export default function MainLayout({ children }) {
               <AtomicState>
                 <FetchConfig baseUrl='/api'>
                   <Navbar />
-                  <div className='max-w-screen-2xl mx-auto'>
+                  <div className='max-w-screen-xl mx-auto mb-32'>
                     {children}
                   </div>
+                  <Footer />
                 </FetchConfig>
               </AtomicState>
             </AuthProvider>

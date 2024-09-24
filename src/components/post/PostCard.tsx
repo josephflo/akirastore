@@ -27,6 +27,9 @@ interface Props {
 export default function PostCard({ post }: Props) {
   return (
     <Card>
+      <div className="bg-slate-200 h-[360px]">
+        <img src="" alt="" />
+      </div>
       <CardHeader>
         <CardTitle>{post.title}</CardTitle>
         <CardDescription>{formatDate(post.date)}</CardDescription>
@@ -38,7 +41,7 @@ export default function PostCard({ post }: Props) {
       </CardContent>
       <CardFooter className='flex justify-end'>
         <Button size='sm' variant='outline' asChild>
-          <Link href={`/inventory/${post.id}`}>View Post</Link>
+          <Link href={`/inventory/${post.id}`}>Ver Articulo</Link>
         </Button>
       </CardFooter>
     </Card>

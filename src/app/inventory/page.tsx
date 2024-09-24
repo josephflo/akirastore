@@ -16,13 +16,13 @@ export default async function Posts() {
   const posts = (await prisma.post.findMany({})).reverse()
 
   return (
-    <section>
+    <section className='margin-section-hero'>
       <Link href='/' className='flex gap-1 items-center max-w-min'>
         <ArrowLeft size={18} />
         Back
       </Link>
       <header className='flex items-center justify-between my-4 md:my-8'>
-        <h1 className='font-bold text-2xl'>All Posts</h1>
+        <h1 className='font-bold text-2xl lg:mt-10'>All Posts</h1>
         <Link href='/inventory/create'>
           <Button size='sm' variant='outline'>
             Create Post
@@ -35,7 +35,7 @@ export default async function Posts() {
           <p>No posts to show</p>
         </div>
       ) : (
-        <div className='py-4 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 items-stretch gap-2 rounded-md'>
+        <div className='py-4 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 items-stretch gap-4 rounded-md'>
           <RenderList
             data={posts}
             render={post => <PostCard post={post} key={post.id} />}

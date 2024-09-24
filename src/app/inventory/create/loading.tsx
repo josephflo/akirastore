@@ -4,7 +4,7 @@ import PostFormSkeleton from '@/components/post/PostFormSkeleton'
 
 export default function CreateLoading() {
   return (
-    <section>
+    <section className='margin-section-hero'>
       <div className='flex gap-1 items-center '>
         <ArrowLeft size={18} />
         Back

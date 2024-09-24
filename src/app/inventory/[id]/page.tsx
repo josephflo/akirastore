@@ -20,7 +20,7 @@ export default async function PostDetailsPage(props: PostPageProps) {
   const post = await getPost(props)
 
   return (
-    <section>
+    <section className="margin-section-hero">
       <Link href='/inventory' className='flex gap-1 items-center max-w-min'>
         <ArrowLeft size={18} />
         Back
