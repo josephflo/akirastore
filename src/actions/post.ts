@@ -10,7 +10,7 @@ export async function createPost(post: any) {
     const validation = postSchema.safeParse(post)
 
     if (validation.success) {
-      const newPost = await prisma.post.create({
+      const newPost = await prisma.products.create({
         data: post
       })
 

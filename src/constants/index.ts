@@ -9,8 +9,8 @@ export const InfoList = [
 ];
 
 export const featuresList = [
-  { name: "CAMPERAS", href: "/camperas.webp", link:"/camperas" },
-  { name: "PANTALONES", href: "/pantalones.webp", link:"/pantalones" },
-  { name: "CORSETS", href: "/corsets.webp", link:"/corsets" },
-  { name: "CHALECOS", href: "/chalecos.webp", link:"/chalecos" }
+  { name: "Camperas", href: "/camperas.webp", link:"/camperas", image:"/camperas.webp" },
+  { name: "Pantalones", href: "/pantalones.webp", link:"/pantalones", image:"/pantalones.webp" },
+  { name: "Corsets", href: "/corsets.webp", link:"/corsets", image:"/corsets.webp" },
+  { name: "Chalecos", href: "/chalecos.webp", link:"/chalecos", image:"/chalecos.webp" }
 ];

@@ -7,7 +7,7 @@ import ProductCard from "@/components/ProductCard";
 import { featuresList } from "@/constants";
 
 export default async function Page() {
-  const posts = (await prisma.post.findMany({})).reverse();
+  const posts = (await prisma.products.findMany({})).reverse();
 
   return (
     <>
@@ -40,7 +40,7 @@ export default async function Page() {
                 <Link href={item.link} className="w-full h-full object-cover absolute">
                   
                 </Link>
-                <h3 className="font-bold leading-normal absolute text-white text-xl z-50 tracking-widest">{item.name}</h3>
+                <h3 className="font-bold leading-normal absolute text-white text-xl z-50 tracking-widest">{item.name.toUpperCase()}</h3>
                 <img src={item.href} alt={item.name} className="w-full h-full object-cover " />
               </div>
             ))}

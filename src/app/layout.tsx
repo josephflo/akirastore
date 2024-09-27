@@ -28,7 +28,7 @@ export default function MainLayout({ children }) {
               <AtomicState>
                 <FetchConfig baseUrl='/api'>
                   <Navbar />
-                  <div className='max-w-screen-xl mx-auto mb-32'>
+                  <div className='max-w-screen-xl mx-auto mb-32 px-8'>
                     {children}
                   </div>
                   <Footer />

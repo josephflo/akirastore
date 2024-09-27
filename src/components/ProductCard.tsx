@@ -3,15 +3,15 @@ import React from "react";
 const ProductCard = ({ post }: { post: any }) => {
   console.log("productcard", post);
   return (
-    <div className="flex flex-col">
+    <div key={post?.id} className="flex flex-col gap-y-2 w-full">
       <div className="flex h-[494px] overflow-hidden rounded-lg border p-2 items-center">
         <img src="/campera-1.png" alt="camperas" className="w-" height={680}/>
       </div>
       <div>
-        <p className="font-light leading-normal">{post?.content}</p>
-        <p className="font-bold leading-normal">{post?.title}</p>
-        <p>Campera London</p>
-        <p>$1980</p>
+        <p className="font-light leading-normal">{post?.type}</p>
+        <p className="font-bold leading-normal">{post?.name}</p>
+        <p>{post?.description}</p>
+        <p className="font-bold">${post?.price}</p>
       </div>
     </div>
   );

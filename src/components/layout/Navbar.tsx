@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { BrowserOnly } from "react-kuh";
 import { IoIosMenu } from "react-icons/io";
+import { IoIosSearch } from "react-icons/io";
 
 import { ThemeToggle, AuthButton } from "@/components/layout";
 
@@ -14,15 +15,21 @@ export default function Navbar() {
             <IoIosMenu className="text-2xl font-normal  items" />
           </Link>
 
-          <Link className="flex font-bold text-lg w-16 h-auto tracking-widest" href={"/"}>
+          <Link
+            className="flex font-bold text-lg w-16 h-auto tracking-widest"
+            href={"/"}
+          >
             MENU
           </Link>
 
           <Link
-            className="font-bold text-lg w-16 h-auto mx-auto tracking-widest"
+            className="flex font-bold text-lg w-16 h-auto mx-auto tracking-widest"
             href="/inventory"
           >
             BSCR
+            <h1 className="text-center text-lg font-bold mt-1">
+              <IoIosSearch size={22} />
+            </h1>
           </Link>
         </div>
 

@@ -7,9 +7,20 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Post {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  title   String
-  date    DateTime @default(now())
-  content String
+model Products {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  type        String
+  price       String
+  size        String
+  imageUrl    String
+  description String
+  createdAt   DateTime @default(now())
 }
+
+// enum Size {
+//   S
+//   M
+//   L
+//   XL
+// }

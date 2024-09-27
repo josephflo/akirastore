@@ -23,7 +23,7 @@ export default async function PostDetailsPage(props: PostPageProps) {
     <section className="margin-section-hero">
       <Link href='/inventory' className='flex gap-1 items-center max-w-min'>
         <ArrowLeft size={18} />
-        Back
+        Atras
       </Link>
       {post ? (
         <div className='max-w-4xl gap-2 mt-4 mx-auto flex flex-col lg:flex-row'>
@@ -36,7 +36,7 @@ export default async function PostDetailsPage(props: PostPageProps) {
         </div>
       ) : (
         <div className='flex items-center justify-center h-72'>
-          Post not found
+          Articulos no encontrados
         </div>
       )}
     </section>

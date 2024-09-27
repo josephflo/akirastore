@@ -8,11 +8,11 @@ export default function Create() {
     <section className='margin-section-hero'>
       <Link href='/inventory' className='flex gap-1 items-center max-w-min'>
         <ArrowLeft size={18} />
-        Back
+        Atras
       </Link>
       <div className='max-w-3xl mx-auto'>
         <header className='my-4 md:my-8'>
-          <h1 className='font-bold text-2xl'>Add Post</h1>
+          <h1 className='font-bold text-2xl'>CREANDO ARTICULO NUEVO</h1>
         </header>
         <PostForm />
       </div>

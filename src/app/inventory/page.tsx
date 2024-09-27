@@ -14,19 +14,19 @@ export const revalidate = 0
 export default async function Posts() {
   headers()
 
-  const posts = (await prisma.post.findMany({})).reverse()
+  const posts = (await prisma.products.findMany({})).reverse()
 
   return (
     <section className='margin-section-hero'>
       <Link href='/' className='flex gap-1 items-center max-w-min'>
         <ArrowLeft size={18} />
-        Back
+        Atras
       </Link>
       <header className='flex items-center justify-between my-4 md:my-8'>
         <h1 className='font-bold text-2xl lg:mt-10'>All Posts</h1>
         <Link href='/inventory/create'>
           <Button size='sm' variant='outline'>
-            Create Post
+            CREAR ARTICULO
           </Button>
         </Link>
       </header>
