@@ -34,20 +34,28 @@ export default async function Page() {
           </h2>
         </div>
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-1 md:max-w-[84rem] md:grid-cols-2 lg:grid-cols-4 ">
-         
-            {featuresList.map((item, index)=>(
-              <div className="flex h-[480px] flex-col border justify-center gap-y-4 items-center rounded-lg relative overflow-hidden transition-transform duration-500 ease-in-out hover:scale-105 hover:brightness-110" key={index}>
-                <Link href={item.link} className="w-full h-full object-cover absolute">
-                  
-                </Link>
-                <h3 className="font-bold leading-normal absolute text-white text-xl z-50 tracking-widest">{item.name.toUpperCase()}</h3>
-                <img src={item.href} alt={item.name} className="w-full h-full object-cover " />
-              </div>
-            ))}
-        
+          {featuresList.map((item, index) => (
+            <div
+              className="flex h-[480px] flex-col border justify-center gap-y-4 items-center rounded-lg relative overflow-hidden transition-transform duration-500 ease-in-out hover:scale-105 hover:brightness-110"
+              key={index}
+            >
+              <Link
+                href={item.link}
+                className="w-full h-full object-cover absolute"
+              ></Link>
+              <h3 className="font-bold leading-normal absolute text-white text-xl z-50 tracking-widest">
+                {item.name.toUpperCase()}
+              </h3>
+              <img
+                src={item.href}
+                alt={item.name}
+                className="w-full h-full object-cover "
+              />
+            </div>
+          ))}
         </div>
       </section>
-      
+
       <section
         id="open-source"
         className="container py-8 md:py-12 lg:py-8 mx-auto"
@@ -56,16 +64,17 @@ export default async function Page() {
           <h2 className="font-bold text-2xl leading-[1.1] sm:text-2xl md:text-4xl">
             New Arrivals
           </h2>
-          
         </div>
       </section>
 
       <section className="flex flex-col mb-20 w-full h-full">
         <div className="grid gap-4 sm:grid-cols-2 w-full  md:grid-cols-3 lg:grid-cols-4 mb-2 px-8 ">
           {posts.length > 0 &&
-            posts
-              .slice(0, 4)
-              .map((post: any) => <ProductCard key={post.id} post={post} />)}
+            posts.slice(0, 4).map((post: any) => (
+              <Link href={`/inventory/${post.id}`} key={post.id}>
+                <ProductCard key={post.id} post={post} />
+              </Link>
+            ))}
         </div>
       </section>
     </>
