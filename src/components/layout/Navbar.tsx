@@ -16,7 +16,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            className="flex font-bold text-lg w-16 h-auto tracking-widest"
+            className="font-bold text-lg w-16 h-auto tracking-widest hidden md:block"
             href={"/"}
           >
             MENU

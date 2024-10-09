@@ -59,6 +59,7 @@ export default function PostForm() {
       formData.append("blobFile", blobFile);
       formData.append("fileName", values.imageUrl[0].name);
     }
+    
     try {
       const product = {
         name: values.name,
@@ -71,16 +72,18 @@ export default function PostForm() {
       console.log("product", product);
 
       // const newProduct = await createPost(product);
-      const res = await fetch("/api/products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(product),
+      const res = await fetch('https://localhost:3000/api/upload', {
+        method: 'POST',
+        body: formData,
       });
+
+      const data = await res.json();
+      console.log(data);
+      
       router.push("/inventory");
       setLoading(false);
       return res
+      
     } catch (error) {
       console.log(error);
     }
@@ -131,8 +134,8 @@ export default function PostForm() {
               <div className="flex cursor-pointer items-center gap-2">
                 <Image
                   src={type.image}
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   alt="type"
                   className="rounded-full border border-slate-700"
                 />

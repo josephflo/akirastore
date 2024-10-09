@@ -24,10 +24,10 @@ export const FileUploader = ({ files, onChange }: FileUploaderProps) => {
       {files && files?.length > 0 ? (
         <Image
           src={convertFileToUrl(files[0])}
-          width={450}
-          height={1000}
+          width={500}
+          height={600}
           alt="uploaded image"
-          className="max-h-[400px] overflow-hidden object-cover"
+          className="max-h-[600px] overflow-hidden object-cover"
         />
       ) : (
         <>

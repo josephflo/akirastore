@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   description: 'Akira store, somos una tienda de ropa de moda femenina. Estamos ubicados en Flores(Avellaneda)'
 }
 
-export default function MainLayout({ children }) {
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
       <head>
         <title>AKIRA STORE</title>
-        <meta name='description' content='A Starter with Next.js' />
+        <meta name='Venta de indumentaria femenina Zona Avellaneda Flores' content='Mayorista de Indumentaria Femenina, AKIRA STORE, Somos una tienda de ropa de moda femenina. Estamos ubicados en Flores(Avellaneda)' />
       </head>
 
       <body className={GeistSans.className}>
@@ -30,8 +30,9 @@ export default function MainLayout({ children }) {
                 <FetchConfig baseUrl='/api'>
                   <TopBar />
                   <Navbar />
-                  <div className='max-w-screen-xl mx-auto mb-32 px-8'>
+                  <div className='max-w-screen-3xl mx-auto mb-32 px-20'>
                     {children}
+                    
                   </div>
                   <Footer />
                 </FetchConfig>
