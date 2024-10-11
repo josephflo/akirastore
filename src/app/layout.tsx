@@ -30,7 +30,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 <FetchConfig baseUrl='/api'>
                   <TopBar />
                   <Navbar />
-                  <div className='max-w-screen-3xl mx-auto mb-32 px-20'>
+                  <div className='max-w-screen-3xl mx-auto mb-32'>
                     {children}
                     
                   </div>

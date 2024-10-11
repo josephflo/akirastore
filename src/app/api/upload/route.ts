@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       message: "Uploaded successfully",
-      url: responseCloudinary,
+      url: responseCloudinary.secure_url,
     });
   } catch (error) {
     console.log("\x1b[31m%s\x1b[0m", "ERROR CATCH", error);

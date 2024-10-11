@@ -5,7 +5,7 @@ const ProductCard = ({ post }: { post: any }) => {
   return (
     <div key={post?.id} className="flex flex-col gap-y-2 w-full">
       <div className="flex h-[494px] overflow-hidden border p-2 items-center">
-        <img src="/campera-1.png" alt="camperas" className="w-" height={680}/>
+        <img src={post.imageUrl ? post.imageUrl : "/campera-1.png"} alt="camperas" className="w-full" height={680}/>
       </div>
       <div>
         <p className="font-light leading-normal">{post?.type}</p>

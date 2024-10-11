@@ -49,14 +49,36 @@ export default function PostForm() {
 
   const onSubmit = async (values: z.infer<typeof clothingItemSchema>) => {
     setLoading(true);
-    
+
     try {
 
-     await createProduct(values);
-      
-      // router.push("/inventory");
+      if(!values.imageUrl || values.imageUrl.length === 0) {
+        throw new Error("No image uploaded");
+      }
+
+      const formData = new FormData();
+      values.imageUrl.forEach((file: File) => {
+        formData.append("files", file);
+      });
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Error uploading image");
+      }
+
+      const data = await response.json();
+      const cloudinaryUrl = data.url
+      console.log("DATA", data);
+
+
+      await createProduct({...values, imageUrl: cloudinaryUrl});
+
+      router.push("/inventory");
       setLoading(false);
-      
     } catch (error) {
       console.log(error);
     }
