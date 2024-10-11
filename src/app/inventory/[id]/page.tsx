@@ -23,7 +23,7 @@ const productDetails = async ({ params: { id } }: Props) => {
 
         <div className="flex flex-col w-full">
           <img
-            src="/campera-1.png"
+            src={product?.imageUrl ? product.imageUrl : "/campera-1.png"} 
             alt="campera"
             className="w-full h-[860px] object-cover"
           />
@@ -33,7 +33,7 @@ const productDetails = async ({ params: { id } }: Props) => {
           <h1 className=" text-2xl font-bold mb-8">{product?.name}</h1>
           <p className="text-2xl">${product?.price}</p>
           <p className="text-small">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            {product?.description}
           </p>
           <p className="text-base font-bold">Talle S M L XL</p>
           <p className="text-base font-bold">Color</p>
