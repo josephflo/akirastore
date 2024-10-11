@@ -27,6 +27,7 @@ import { SelectItem } from "../ui/select";
 import Image from "next/image";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import { useState } from "react";
+import { createProduct } from "@/lib/actions/product.actions";
 
 type FormSchema = z.infer<typeof clothingItemSchema>;
 
@@ -48,41 +49,13 @@ export default function PostForm() {
 
   const onSubmit = async (values: z.infer<typeof clothingItemSchema>) => {
     setLoading(true);
-
-    let formData;
-    if (values.imageUrl && values.imageUrl?.length > 0) {
-      const blobFile = new Blob([values.imageUrl[0]], {
-        type: values.imageUrl[0].type,
-      });
-
-      formData = new FormData();
-      formData.append("blobFile", blobFile);
-      formData.append("fileName", values.imageUrl[0].name);
-    }
     
     try {
-      const product = {
-        name: values.name,
-        type: values.type,
-        description: values.description,
-        price: values.price,
-        size: values.size,
-        imageUrl: values.imageUrl ? formData : undefined,
-      };
-      console.log("product", product);
 
-      // const newProduct = await createPost(product);
-      const res = await fetch('https://localhost:3000/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await res.json();
-      console.log(data);
+     await createProduct(values);
       
-      router.push("/inventory");
+      // router.push("/inventory");
       setLoading(false);
-      return res
       
     } catch (error) {
       console.log(error);

@@ -2,7 +2,7 @@ import * as Types from '@prisma/client'
 
 export { Types }
 
-export type CloudinaryResponse = {
+export type ResultType = {
   asset_id: string;
   public_id: string;
   version: number;

@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
-import { resolve } from "path";
-import { CloudinaryResponse } from "@/types";
+import { ResultType } from "@/types";
 
 cloudinary.config({
-  cloud_name: "dqjinotkw",
-  api_key: "447799582188724",
-  api_secret: "5TscP9gjhBu5U-HMosFq0Omzz5o",
-});
+  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true,
+})
 
 export async function POST(req: Request) {
   try {
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       message: "Uploaded successfully",
-      url: responseCloudinary.secure_url,
+      url: responseCloudinary,
     });
   } catch (error) {
     console.log("\x1b[31m%s\x1b[0m", "ERROR CATCH", error);
