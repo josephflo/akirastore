@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 import ProductCard from "@/components/ProductCard";
 import { featuresList } from "@/constants";
+import { Carousel } from "@/components/ui/carousel";
+import CarouselSection from "@/components/CarouselSection";
 
 export default async function Page() {
   const posts = (await prisma.products.findMany({})).reverse();
 
   return (
     <>
+
       <section className="w-full space-y-6 pb-4 ">
         <div className="w-full flex flex-col items-center gap-4 text-center mx-auto relative">
           <h1 className="font-bold leading-normal text-2xl md:text-6xl lg:text-7xl absolute bottom-44 pr-20">
@@ -18,8 +21,8 @@ export default async function Page() {
           <h1 className="font-bold leading-normal text-2xl  md:text-6xl lg:text-7xl absolute bottom-28">
             SUMMER '25
           </h1>
-          <div className="w-[70%]">
-            <img src="/hero.webp" alt="hero" className="w-full" />
+          <div className="w-[70%] overflow-hidden">
+            <img src="/hero.webp" alt="hero" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -77,6 +80,10 @@ export default async function Page() {
               </Link>
             ))}
         </div>
+      </section>
+
+      <section>
+        <CarouselSection />
       </section>
     </>
   );
