@@ -1,24 +1,17 @@
 import Link from "next/link";
-
-import { Button } from "@/components/ui/button";
-import { prisma } from "@/lib/prisma";
-import ProductCard from "@/components/ProductCard";
 import { featuresList } from "@/constants";
-import { Carousel } from "@/components/ui/carousel";
 import CarouselSection from "@/components/CarouselSection";
 
 export default async function Page() {
-  const posts = (await prisma.products.findMany({})).reverse();
 
   return (
     <>
-
       <section className="w-full space-y-6 pb-4 ">
         <div className="w-full flex flex-col items-center gap-4 text-center mx-auto relative">
-          <h1 className="font-bold leading-normal text-2xl md:text-6xl lg:text-7xl absolute bottom-44 pr-20">
+          <h1 className="font-bold leading-normal text-2xl md:text-6xl lg:text-7xl absolute bottom-24 lg:bottom-80 pr-20">
             SPRING |
           </h1>
-          <h1 className="font-bold leading-normal text-2xl  md:text-6xl lg:text-7xl absolute bottom-28">
+          <h1 className="font-bold leading-normal text-2xl  md:text-6xl lg:text-7xl absolute bottom-12 lg:bottom-64">
             SUMMER '25
           </h1>
           <div className="w-[70%] overflow-hidden">
@@ -62,7 +55,7 @@ export default async function Page() {
 
       <section
         id="open-source"
-        className="container py-8 md:py-12 lg:py-8 mx-auto"
+        className="w-full mx-auto space-y-6 py-8 "
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center ">
           <h2 className="font-bold text-2xl leading-[1.1] sm:text-2xl md:text-4xl">
@@ -70,17 +63,6 @@ export default async function Page() {
           </h2>
         </div>
       </section>
-
-      {/* <section className="flex flex-col mb-20 w-full h-full">
-        <div className="grid gap-4 sm:grid-cols-2 w-full  md:grid-cols-3 lg:grid-cols-4 mb-2 px-8 ">
-          {posts?.length > 0 &&
-            posts.slice(0, 4).map((post: any) => (
-              <Link href={`/inventory/${post.id}`} key={post.id}>
-                <ProductCard key={post.id} post={post} />
-              </Link>
-            ))}
-        </div>
-      </section> */}
 
       <section
         id="new-arrivals"

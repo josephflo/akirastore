@@ -18,7 +18,7 @@ const productDetails = async ({ params: { id } }: Props) => {
   });
 
   return (
-    <section className="h-full w-full margin-section-hero px-4 mx-auto">
+    <section className="container h-full w-full margin-section-hero px-8 lg:px-28 mx-auto">
       <div className="flex flex-col lg:flex-row mx-auto gap-6">
 
         <div className="flex flex-col w-full">
@@ -37,7 +37,8 @@ const productDetails = async ({ params: { id } }: Props) => {
           </p>
           <p className="text-base font-bold">Talle S M L XL</p>
           <p className="text-base font-bold">Color</p>
-          <Button className="w-full">Add to cart</Button>
+          <Button className="w-full">Agregar al carrito</Button>
+          <Button className="w-full bg-whatsapp">Continuar en WhatsApp</Button>
           <div className="w-full mt-4 border-dashed border-black border-t"/>
           <p>SKU: 24299-M-VERDE04</p>
           <div className="w-full mt-4 border-dashed border-black border-t"/>

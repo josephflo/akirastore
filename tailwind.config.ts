@@ -19,6 +19,7 @@ module.exports = {
   	extend: {
   		colors: {
   			border: 'hsl(var(--border))',
+				whatsapp: '#25D366',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			background: 'hsl(var(--background))',
@@ -57,7 +58,7 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
