@@ -37,7 +37,7 @@ export default async function Page() {
           </h2>
         </div>
 
-        <section className="w-full grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-8">
+        <section className="w-full grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 lg:px-14">
           {featuresList.map((item, index) => (
             <div
               className="flex h-[680px] flex-col border justify-center gap-y-4 items-center relative overflow-hidden transition-transform duration-500 ease-in-out hover:scale-105 hover:filter hover:brightness-75"
@@ -71,19 +71,22 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col mb-20 w-full h-full">
+      {/* <section className="flex flex-col mb-20 w-full h-full">
         <div className="grid gap-4 sm:grid-cols-2 w-full  md:grid-cols-3 lg:grid-cols-4 mb-2 px-8 ">
-          {posts.length > 0 &&
+          {posts?.length > 0 &&
             posts.slice(0, 4).map((post: any) => (
               <Link href={`/inventory/${post.id}`} key={post.id}>
                 <ProductCard key={post.id} post={post} />
               </Link>
             ))}
         </div>
-      </section>
+      </section> */}
 
-      <section>
-        <CarouselSection />
+      <section
+        id="new-arrivals"
+        className="mx-auto px-14 lg:px-24 w-full"
+      >
+        <CarouselSection/>
       </section>
     </>
   );
