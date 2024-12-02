@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
-import { ResultType } from "@/types";
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -12,10 +11,7 @@ cloudinary.config({
 export async function POST(req: Request) {
   try {
     const files = await req.formData();
-    console.log("\x1b[31m%s\x1b[0m", "POST TAKES FILES", files);
     const images = files.getAll("files");
-
-    console.log("\x1b[31m%s\x1b[0m", "FILES", images);
 
     if (!images || images.length === 0) {
       return NextResponse.json("No files uploaded", { status: 400 });
@@ -35,7 +31,7 @@ export async function POST(req: Request) {
                 { folder: "akiracloud" },
                 (error, result) => {
                   if (error) {
-                    console.log("\x1b[31m%s\x1b[0m", "ERROR DETAIL", error);
+                    console.log("\x1b[31m%s\x1b[0m", "ERROR DETAIL", error); // Log detallado del error
                     return reject(error);
                   }
                   resolve(result);
@@ -51,6 +47,7 @@ export async function POST(req: Request) {
             responseCloudinary
           );
 
+          // Agrega la URL al array si la respuesta es exitosa
           if (responseCloudinary && responseCloudinary.secure_url) {
             urls.push(responseCloudinary.secure_url);
           } else {
@@ -58,25 +55,27 @@ export async function POST(req: Request) {
               status: 500,
             });
           }
-        } catch (error) {
-          console.log("\x1b[31m%s\x1b[0m", "ERROR CATCH", error);
+        } catch (uploadError:any) {
+          console.log("\x1b[31m%s\x1b[0m", "UPLOAD ERROR", uploadError); // Error en la subida
           return NextResponse.json(
-            { message: "Error during the upload process" },
+            {
+              message: "Error uploading to Cloudinary",
+              error: uploadError.message,
+            },
             { status: 500 }
           );
         }
       }
     }
 
-    // Retornar después de completar todas las subidas
     return NextResponse.json({
       message: "Uploaded successfully",
       urls,
     });
   } catch (error) {
-    console.log("\x1b[31m%s\x1b[0m", "ERROR OUTSIDE", error);
+    console.log("\x1b[31m%s\x1b[0m", "ERROR CATCH", error);
     return NextResponse.json(
-      { message: "Unexpected error occurred" },
+      { message: "Error during the upload process" },
       { status: 500 }
     );
   }

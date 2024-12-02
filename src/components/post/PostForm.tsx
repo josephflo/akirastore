@@ -71,7 +71,7 @@ export default function PostForm() {
       }
 
       const data = await response.json();
-      const cloudinaryUrl = data.url
+      const cloudinaryUrl = data.urls
       console.log("DATA", data);
 
 

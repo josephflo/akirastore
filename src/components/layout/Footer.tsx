@@ -4,7 +4,7 @@ import Link from "next/link"
 const Footer = () => {
   return (
     <footer className="container bg-background w-full h-[320px] border-t border-black dark:border-white mt-10 mx-auto">
-      <div className="grid md:flex mx-auto px-28 justify-between border-b border-black dark:border-white py-16 gap-4">
+      <div className="grid md:flex mx-auto px-6 md:px-28 justify-between border-b border-black dark:border-white py-16 gap-4">
         <section className="flex flex-col md:max-w-[480px] gap-2">
           <h1 className="font-bold leading-normal">ACERCA DE AKIRA STORE</h1>
           <p>Creamos ropa con amor inspirada en un estilo clásico y romántico que busca resaltar y complementar la confianza, feminidad y delicadeza de las mujeres. Nos esforzamos siempre para aportar comodidad, calidad y un sello único en la vida de cada mujer que nos elige.</p>

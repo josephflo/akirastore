@@ -33,13 +33,16 @@ const Test = () => {
         throw new Error("No image uploaded");
       }
       
-      console.log(values.imageUrl);
+      console.log("Click submit",values.imageUrl);
+      
 
       const formData = new FormData();
       values.imageUrl.forEach((file: File) => {
         formData.append("files", file);
       });
-      const response = await fetch("/api/upload", {
+      console.log("this is formData",formData.getAll("files"));
+
+      const response = await fetch("/api/test-upload", {
         method: "POST",
         body: formData,
       });
@@ -52,12 +55,12 @@ const Test = () => {
     } catch (error) {
       console.error("Error on:", (error as Error).message);
     }
-    console.log(values.imageUrl);
+    console.log("worldohNo",values.imageUrl);
   };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 container">
         <FormField
           control={form.control}
           name="imageUrl"
