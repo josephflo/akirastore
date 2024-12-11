@@ -14,3 +14,29 @@ export const featuresList = [
   { name: "Corsets", href: "/corsets-2.webp", link:"/corsets", image:"/corsets-2.webp" },
   { name: "Chalecos", href: "/chalecos.webp", link:"/chalecos", image:"/chalecos.webp" }
 ];
+
+export const Catalogo = [
+  {
+    image: "/pantalones.webp",
+    name: "pantalones",
+  },
+  {
+    image: "/camperas.webp",
+    name: "Camperas",
+  },
+  {
+    image: "/corsets-2.webp",
+    name: "Corsets",
+  },
+  {
+    image: "/chalecos.webp",
+    name: "Chalecos",
+  },
+
+];
+
+export const StatusIcon = {
+  scheduled: "/icons/check.svg",
+  pending: "/icons/pending.svg",
+  cancelled: "/icons/cancelled.svg",
+};

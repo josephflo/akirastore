@@ -59,6 +59,14 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
+				dark: {
+          200: "#0D0F10",
+          300: "#131619",
+          400: "#1A1D21",
+          500: "#363A3D",
+          600: "#76828D",
+          700: "#ABB8C4",
+        },
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -81,12 +89,23 @@ module.exports = {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+				"caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
+        },
   		},
+			backgroundImage: {
+        appointments: "url('/assets/appointments-bg.png')",
+        pending: "url('/assets/pending-bg.png')",
+        cancelled: "url('/assets/cancelled-bg.png')",
+      },
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+				"caret-blink": "caret-blink 1.25s ease-out infinite",
+  		},
+			
   	}
   },
   plugins: [require('tailwindcss-animate')]

@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 import ProductCard from "@/components/ProductCard";
+import { Navbar } from "@/components/layout";
 
 export const revalidate = 0;
 
@@ -13,6 +14,8 @@ export default async function Posts() {
   const posts = (await prisma.products.findMany({})).reverse();
 
   return (
+    <>
+    <Navbar />
     <section className="container margin-section-hero">
       <Link href="/" className="flex gap-1 items-center max-w-min">
         <ArrowLeft size={18} />
@@ -20,11 +23,7 @@ export default async function Posts() {
       </Link>
       <header className="flex items-center justify-between my-4 md:my-8">
         <h1 className="font-bold text-2xl lg:mt-10">All Posts</h1>
-        <Link href="/inventory/create">
-          <Button size="sm" variant="outline">
-            CREAR ARTICULO
-          </Button>
-        </Link>
+        
       </header>
 
       {posts.length === 0 ? (
@@ -41,5 +40,7 @@ export default async function Posts() {
         </div>
       )}
     </section>
+    </>
+
   );
 }

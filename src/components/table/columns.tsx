@@ -1,0 +1,104 @@
+"use client";
+
+import { ColumnDef } from "@tanstack/react-table";
+import Image from "next/image";
+
+import { Catalogo } from "@/constants";
+import { Appointment } from "@/types/appwrite-types";
+
+// import { AppointmentModal } from "../AppointmentModal";
+import { StatusBadge } from "../StatusBadge";
+
+export const columns: ColumnDef<Appointment>[] = [
+  {
+    header: "#ID",
+    cell: ({ row }) => {
+      return <p className="text-14-medium ">{row.index + 1}</p>;
+    },
+  },
+  {
+    accessorKey: "product",
+    header: "Product",
+    cell: ({ row }) => {
+      const appointment = row.original;
+      return <p className="text-14-medium ">{"Pantalon Suecia"}</p>;
+    },
+  },
+  {
+    accessorKey: "inStock",
+    header: "In Stock",
+    cell: ({ row }) => {
+      const appointment = row.original;
+      return (
+        <div className="min-w-[115px]">
+          <StatusBadge status={appointment.status} />
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: "schedule",
+    header: "Appointment",
+    cell: ({ row }) => {
+      const appointment = row.original;
+      return (
+        <p className="text-14-regular min-w-[100px]">
+          14:30
+        </p>
+      );
+    },
+  },
+  {
+    accessorKey: "catalogo",
+    header: "Catalogo",
+    cell: ({ row }) => {
+      const appointment = row.original;
+
+      const catalogo = Catalogo.find(
+        (catalogo) => catalogo.name === catalogo.name
+      );
+
+      return (
+        <div className="flex items-center gap-3">
+          <Image
+            src={catalogo?.image!}
+            alt="catalogo"
+            width={100}
+            height={100}
+            className="size-8"
+          />
+          <p className="whitespace-nowrap">{catalogo?.name}</p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "actions",
+    header: () => <div className="pl-4">Actions</div>,
+    cell: ({ row }) => {
+      const appointment = row.original;
+
+      return (
+        <div className="flex gap-1">
+          hola
+          {/* <AppointmentModal
+            patientId={appointment.patient.$id}
+            userId={appointment.userId}
+            appointment={appointment}
+            type="schedule"
+            title="Schedule Appointment"
+            description="Please confirm the following details to schedule."
+          />
+          <AppointmentModal
+            patientId={appointment.patient.$id}
+            userId={appointment.userId}
+            appointment={appointment}
+            type="cancel"
+            title="Cancel Appointment"
+            description="Are you sure you want to cancel your appointment?"
+          /> */}
+        </div>
+      );
+    },
+  },
+];

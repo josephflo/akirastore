@@ -36,7 +36,7 @@ export default function AuthButton() {
       </DropdownMenuContent>
     </DropdownMenu>
   ) : (
-    <Link href='/api/auth/signin'>
+    <Link href='/login'>
       <Button size='icon' variant='ghost'>
         <IoIosLogIn className='text-2xl' />
       </Button>

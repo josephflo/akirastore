@@ -28,13 +28,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <AuthProvider>
               <AtomicState>
                 <FetchConfig baseUrl='/api'>
-                  <TopBar />
-                  <Navbar />
+                 
                   <div className='max-w-screen-3xl mx-auto mb-32'>
                     {children}
-                    
                   </div>
-                  <Footer />
                 </FetchConfig>
               </AtomicState>
             </AuthProvider>

@@ -34,7 +34,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-x-2">
-          {/* <AuthButton /> */}
+          <AuthButton />
           <BrowserOnly>
             <ThemeToggle />
           </BrowserOnly>
