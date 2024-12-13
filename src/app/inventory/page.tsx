@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { headers } from "next/headers";
-import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 import ProductCard from "@/components/ProductCard";
 import { Navbar } from "@/components/layout";

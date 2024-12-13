@@ -249,4 +249,5 @@ body::-webkit-scrollbar-thumb {
   .flex-between {
     @apply flex items-center justify-between;
   }
+
 }

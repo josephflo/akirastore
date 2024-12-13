@@ -8,12 +8,11 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/navigation';
 
 const AdminLogin = ({ searchParams }: SearchParamProps) => {
-  const [openModal, setOpenModal] = useState(false)
   const isAdmin = searchParams?.admin === "true";
 
   return (
     <div className="flex h-screen max-h-screen">
-      {openModal && <PasskeyModal />}
+      {isAdmin && <PasskeyModal />}
 
       <section className="remove-scrollbar container my-auto ">
         <div className="sub-container max-w-[496px] justify-center">

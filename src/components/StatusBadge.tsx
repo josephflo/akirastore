@@ -23,7 +23,7 @@ export const StatusBadge = ({ status }: { status: string }) => {
       <Image src={StatusIcon[status]} alt="status" width={24} height={24} />
 
       <p
-        className={clsx("text-12-semibold capitalize", {
+        className={clsx("text-12-semibold capitalize text-white", {
           "text-green-500": status === "scheduled",
           "text-blue-500": status === "pending",
           "text-red-500": status === "cancelled",

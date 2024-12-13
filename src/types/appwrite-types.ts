@@ -34,3 +34,14 @@ export interface Appointment extends Models.Document {
   userId: string;
   cancellationReason: string | null;
 }
+
+export interface Product extends Models.Document {
+  id: string;
+  name: string;
+  type: string;
+  price: string;
+  size: string;
+  imageUrl: string;
+  description: string;
+  createdAt: Date;
+}
