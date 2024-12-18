@@ -13,7 +13,7 @@ model Products {
   type        String
   price       String
   size        String
-  imageUrl    String
+  imageUrl    String[]
   description String
   createdAt   DateTime @default(now())
 }

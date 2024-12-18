@@ -9,6 +9,7 @@ import { Appointment, Product } from "@/types/appwrite-types";
 // import { AppointmentModal } from "../AppointmentModal";
 import { StatusBadge } from "../StatusBadge";
 import { formatDateTime } from "@/lib/utils";
+import { AppointmentModal } from "../AppointmentModal";
 
 export const columns: ColumnDef<Product>[] = [
 

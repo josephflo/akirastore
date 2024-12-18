@@ -44,6 +44,7 @@ export default function PostForm() {
       price: "",
       size: "",
       imageUrl: [],
+      // imageUrls: []
     },
   });
 
@@ -57,7 +58,7 @@ export default function PostForm() {
       }
 
       const formData = new FormData();
-      values.imageUrl.forEach((file: File) => {
+      values.imageUrl.forEach((file: any) => {
         formData.append("files", file);
       });
 
@@ -72,7 +73,7 @@ export default function PostForm() {
 
       const data = await response.json();
       const cloudinaryUrl = data.urls
-      console.log("DATA", data);
+      console.log("Uploaded full response", data);
 
 
       await createProduct({...values, imageUrl: cloudinaryUrl});

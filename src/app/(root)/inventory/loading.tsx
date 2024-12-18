@@ -7,7 +7,6 @@ import { Navbar } from '@/components/layout'
 export default function PostsLoading() {
   return (
     <>
-    <Navbar />
     <section className='margin-section-hero container'>
       <div className='flex gap-1 items-center '>
         <ArrowLeft size={18} />

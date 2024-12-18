@@ -42,13 +42,11 @@ const AdminLogin = ({ searchParams }: SearchParamProps) => {
       </section>
 
       <section className="hidden md:flex w-1/2 bg-black flex-col items-center justify-center">
-        {/* <img
-          src="/hero.webp"
+        <img
+          src="/akira-logo-white.png"
           alt="Company Logo"
           className="max-h-full max-w-full"
-        /> */}
-        <h1 className='text-white text-5xl'>Akira Store</h1>
-        <p className='text-white text-xl'>Since 2021</p>
+        />
       </section>
     </div>
   )

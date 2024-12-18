@@ -11,6 +11,7 @@ export const clothingItemSchema = z.object({
   price: z.string().min(1, "El precio debe ser un número positivo"),
   size: z.enum(["S", "M", "L",""]),
   imageUrl: z.custom<File[]>().optional(),
+  // imageUrls: z.array(z.string()).optional()
 });
 
 export const UserFormValidation = z.object({

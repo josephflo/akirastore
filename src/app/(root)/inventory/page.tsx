@@ -14,7 +14,6 @@ export default async function Posts() {
 
   return (
     <>
-    <Navbar />
     <section className="container margin-section-hero">
       <Link href="/" className="flex gap-1 items-center max-w-min">
         <ArrowLeft size={18} />

@@ -22,7 +22,7 @@ const TopBar = () => {
     </div>
     <div className="flex w-full text-center mx-auto items-center justify-center h-12 bg-black text-white ">
       <Link href="/">
-        <h1 className="text-xl font-bold">AKIRA STORE</h1>
+        <img src="/akira-logo-white.png" alt="logo" className="w-auto h-14" />
       </Link>
     </div>
     </>

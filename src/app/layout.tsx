@@ -29,7 +29,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
               <AtomicState>
                 <FetchConfig baseUrl='/api'>
                  
-                  <div className='max-w-screen-3xl mx-auto mb-32'>
+                  <div className='max-w-screen-3xl mx-auto'>
                     {children}
                   </div>
                 </FetchConfig>
