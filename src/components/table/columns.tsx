@@ -9,7 +9,8 @@ import { Appointment, Product } from "@/types/appwrite-types";
 // import { AppointmentModal } from "../AppointmentModal";
 import { StatusBadge } from "../StatusBadge";
 import { formatDateTime } from "@/lib/utils";
-import { AppointmentModal } from "../AppointmentModal";
+import { ProductModal } from "../ProductModal";
+import Link from "next/link";
 
 export const columns: ColumnDef<Product>[] = [
 
@@ -44,7 +45,7 @@ export const columns: ColumnDef<Product>[] = [
             alt="catalogo"
             width={100}
             height={100}
-            className="size-8"
+            className="w-8 h-auto"
           />
           <p className="whitespace-nowrap">{type}</p>
         </div>
@@ -104,27 +105,25 @@ export const columns: ColumnDef<Product>[] = [
     id: "actions",
     header: () => <div className="pl-4">Actions</div>,
     cell: ({ row }) => {
-      const appointment = row.original;
+      const item = row.original;
 
       return (
-        <div className="flex gap-1">
-          ...
-          {/* <AppointmentModal
-            patientId={appointment.patient.$id}
-            userId={appointment.userId}
-            appointment={appointment}
-            type="schedule"
-            title="Schedule Appointment"
+        <div className="flex gap-1 cursor-pointer">
+          <ProductModal
+            id={row.id}
+            type="edit"
+            item={item}
+            title="Editar Producto"
             description="Please confirm the following details to schedule."
           />
-          <AppointmentModal
-            patientId={appointment.patient.$id}
-            userId={appointment.userId}
-            appointment={appointment}
-            type="cancel"
-            title="Cancel Appointment"
-            description="Are you sure you want to cancel your appointment?"
-          /> */}
+          <ProductModal
+            id={row.id}
+            type="delete"
+            item={item}
+            title="Eliminar Producto"
+            description="Please confirm the following details to schedule."
+          />
+          
         </div>
       );
     },

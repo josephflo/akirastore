@@ -32,3 +32,34 @@ export const createProduct = async (product: any) => {
     console.log(error);
   }
 };
+
+
+export const updateProduct = async (id: string, updatedData: any) => {
+  try {
+    console.log("Received update data", updatedData);
+
+    // Validación de datos actualizados usando un esquema, opcional
+    const validation = clothingItemSchema.safeParse(updatedData);
+    if (!validation.success) {
+      throw new Error("Product validation failed");
+    }
+
+    // Actualizar el producto en la base de datos
+    const updatedProduct = await prisma.products.update({
+      where: { id }, // Asegúrate de que `id` sea único
+      data: updatedData,
+    });
+    console.log("\x1b[32m%s\x1b[0m", "UPDATED PRODUCT", updatedProduct);
+
+    // Convertir a un objeto plano antes de retornarlo
+    const plainProduct = JSON.parse(JSON.stringify(updatedProduct));
+
+    // Revalidar la página del inventario si aplica
+    revalidatePath("/inventory");
+
+    return plainProduct;
+  } catch (error) {
+    console.error("Error updating product:", error);
+    throw error;
+  }
+};

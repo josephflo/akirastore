@@ -24,7 +24,7 @@ const Features = () => {
                 href={item.link}
                 className="w-full h-full object-cover absolute"
               ></Link>
-              <h3 className="font-bold leading-normal absolute text-white text-xl z-50 tracking-widest">
+              <h3 className="font-bold leading-normal absolute text-white text-2xl z-50 tracking-widest">
                 {item.name.toUpperCase()}
               </h3>
               <img
