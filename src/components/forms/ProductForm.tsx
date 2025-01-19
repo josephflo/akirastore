@@ -27,7 +27,7 @@ const ProductForm = ({
       name: item ? item?.name : "",
       type: item ? item?.type : "",
       description: item ? item.description : "",
-      price: item?.note || "",
+      price: item?.price || "",
       size: item?.size || "",
       imageUrl: item?.imageUrl || "",
     },
@@ -53,6 +53,7 @@ const ProductForm = ({
           <section className="mb-12 space-y-4">
             <h1 className="header">Editar Producto</h1>
             <p className="text-dark-700">Edita tu producto en 10 segundos.</p>
+
             <CustomFormField
               fieldType={FormFieldType.INPUT}
               control={form.control}
@@ -66,11 +67,11 @@ const ProductForm = ({
             <CustomFormField
               fieldType={FormFieldType.INPUT}
               control={form.control}
-              name="type"
-              label="Tipo"
-              placeholder="Vestido"
+              name="price"
+              label="Precio"
+              placeholder="$1999"
             >
-              {item?.type}
+              {`${item?.price}`}
             </CustomFormField>
 
             <CustomFormField

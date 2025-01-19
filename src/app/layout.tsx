@@ -6,8 +6,6 @@ import { AuthProvider, Navbar, ThemeProvider } from '@/components/layout'
 
 import { AtomicState } from 'atomic-state'
 import { FetchConfig } from 'http-react'
-import Footer from '@/components/layout/Footer'
-import TopBar from '@/components/TopBar'
 
 export const metadata: Metadata = {
   title: 'AKIRA STORE',

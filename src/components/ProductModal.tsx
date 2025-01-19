@@ -39,15 +39,7 @@ export const ProductModal = ({
         </Button>
       </DialogTrigger>
       <DialogContent className="shad-dialog sm:max-w-md">
-        <DialogHeader className="mb-4 space-y-3">
-          <DialogTitle className="capitalize">{type} Product</DialogTitle>
-          <DialogDescription>
-            Please fill in the following details to {type} product
-          </DialogDescription>
-        </DialogHeader>
-
         <ProductForm item={item} type={type} setOpen={setOpen} />
-          
       </DialogContent>
     </Dialog>
   );
